@@ -103,27 +103,27 @@ window.onload=()=>{
         // ตรรกะ BOT
         if (emptyCells.length > 0) {
             for (let i = 0; i < 3; i++) {
-                if (point==2&&(state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
+                if ((state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
                     makeMove(2, 2)
                     console.log('N')
                     break;
-                }else if(point==2&&(state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
+                }else if((state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('O')
                     break;
-                }else if(point==2&&(state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
+                }else if((state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
                     makeMove(0, 0)
                     console.log('T')
                     break;
-                }else if(point==2&&(state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
+                }else if((state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
                     makeMove(2, 0)
                     console.log('J')
                     break;
-                }else if(point==2&&(state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
+                }else if((state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('M')
                     break;
-                }else if(point==2&&(state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
+                }else if((state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
                     makeMove(0, 2)
                     console.log('L')
                     break;
@@ -153,27 +153,27 @@ window.onload=()=>{
                     break;
                 }}
                 for (let i = 0; i < 3; i++) {
-            if (point==2&&(state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
+            if ((state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
                 makeMove(2, 2)
                 console.log('N')
                 break;
-            }else if(point==2&&(state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
+            }else if((state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('O')
                 break;
-            }else if(point==2&&(state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
+            }else if((state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
                 makeMove(0, 0)
                 console.log('T')
                 break;
-            }else if(point==2&&(state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
+            }else if((state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
                 makeMove(2, 0)
                 console.log('J')
                 break;
-            }else if(point==2&&(state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
+            }else if((state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('M')
                 break;
-            }else if(point==2&&(state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
+            }else if((state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
                 makeMove(0, 2)
                 console.log('L')
                 break;
