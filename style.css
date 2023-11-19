@@ -1,0 +1,50 @@
+html {
+    scroll-behavior: smooth;
+}
+table {
+    border-collapse: collapse;
+    position: fixed;
+    height: 60%;
+    width: 60%;
+    top: 20%;
+    left: 20%;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 5px solid gold;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.result {
+    font-size: 18px;
+    margin-top: 10px;
+    position: fixed;
+    top: 80%;
+    left: 45%;
+}
+form {
+    font-size: 18px;
+    margin-top: 10px;
+    position: fixed;
+    top: 80%;
+    left: 60%;
+}
+input {
+    background-color: crimson;
+    color: aliceblue;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    transition-duration: 1s;
+    border: none;
+}
+input:hover{
+    transform: scale(1.1);
+    transition-duration: 1s;
+    cursor: pointer;
+}
