@@ -4,6 +4,8 @@ window.onload=()=>{
     var currentPlayer = 'X';
     var gameActive = true;
     var coin = 0
+    var O_s = 0
+    var X_s = 0
     // สร้างบอร์ด และสร้างค่ารับ event
     for (let i = 0; i < 3; i++) {
         const row = board.insertRow(i);
@@ -25,12 +27,16 @@ window.onload=()=>{
                 gameActive = false;
                 restart();
                 if(currentPlayer=='O'){
+                    O_s++
                     setTimeout(() => {
-                    alert('โห่ ไอ้ควายแพ้ BOT') 
+                    alert('โห่ ไอ้ควายแพ้ BOT')
+                    document.getElementById("O").innerHTML = `BOT Score ${O_s}`
                 }, 500);}
                 if(currentPlayer=='X'){
+                    X_s++
                     setTimeout(() => {
-                    alert('Good Good Not Bad') 
+                    alert('Good Good Not Bad')
+                    document.getElementById("X").innerHTML = `Player Score ${X_s}`
                 }, 500);}
             } else if (isBoardFull()) {
                 message.textContent = "It's a tie!";
@@ -168,7 +174,7 @@ window.onload=()=>{
                         break;
                 }
             break;
-            }else if((state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'))&&(state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
+            }else if((state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
                 makeMove(1, 1)
                 console.log('E')
                 break;

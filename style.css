@@ -48,3 +48,10 @@ input:hover{
     transition-duration: 1s;
     cursor: pointer;
 }
+.score{
+    font-size: 18px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    text-align: center;
+}
