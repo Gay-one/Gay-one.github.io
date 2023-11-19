@@ -19,6 +19,7 @@ window.onload=()=>{
     const state = [['', '', ''], ['', '', ''], ['', '', '']];
     // เดิน
     function makeMove(row, col) {
+        point=0;
         if (gameActive && state[row][col] === '') {
             state[row][col] = currentPlayer;
             renderBoard(row, col);
@@ -247,7 +248,7 @@ window.onload=()=>{
                 if ((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')) {
                     makeMove(1, 2)
                     break;
-                }else if ((state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')) {
+                }else if ((state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'&&state[1][0]=='')) {
                     makeMove(1, 0)
                     break;
                 }else{
