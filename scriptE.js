@@ -242,6 +242,17 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
+            }else if((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'&&state[1][0]=='')){
+                console.log('HEE')
+                if ((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')) {
+                    makeMove(1, 2)
+                    break;
+                }else if ((state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')) {
+                    makeMove(1, 0)
+                    break;
+                }else{
+                    continue;
+                }
             }
             else if (point==2){
             const randomIndex = Math.floor(Math.random() * emptyCells.length);
