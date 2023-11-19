@@ -103,27 +103,27 @@ window.onload=()=>{
         // ตรรกะ BOT
         if (emptyCells.length > 0) {
             for (let i = 0; i < 3; i++) {
-                if ((state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
+                if (point==2&&(state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
                     makeMove(2, 2)
                     console.log('N')
                     break;
-                }else if((state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
+                }else if(point==2&&(state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('O')
                     break;
-                }else if((state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
+                }else if(point==2&&(state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
                     makeMove(0, 0)
                     console.log('T')
                     break;
-                }else if((state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
+                }else if(point==2&&(state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
                     makeMove(2, 0)
                     console.log('J')
                     break;
-                }else if((state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
+                }else if(point==2&&(state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('M')
                     break;
-                }else if((state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
+                }else if(point==2&&(state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
                     makeMove(0, 2)
                     console.log('L')
                     break;
@@ -153,27 +153,27 @@ window.onload=()=>{
                     break;
                 }}
                 for (let i = 0; i < 3; i++) {
-            if ((state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
+            if (point==2&&(state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
                 makeMove(2, 2)
                 console.log('N')
                 break;
-            }else if((state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
+            }else if(point==2&&(state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('O')
                 break;
-            }else if((state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
+            }else if(point==2&&(state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
                 makeMove(0, 0)
                 console.log('T')
                 break;
-            }else if((state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
+            }else if(point==2&&(state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
                 makeMove(2, 0)
                 console.log('J')
                 break;
-            }else if((state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
+            }else if(point==2&&(state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('M')
                 break;
-            }else if((state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
+            }else if(point==2&&(state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
                 makeMove(0, 2)
                 console.log('L')
                 break;
@@ -201,7 +201,7 @@ window.onload=()=>{
                 makeMove(0, i)
                 console.log('B')
                 break;
-            }else if(state[1][1]=='X' && (state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[1][0]=='' &&state[1][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
+            }else if(point==2&&state[1][1]=='X' && (state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[1][0]=='' &&state[1][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
                 let randoms = Math.floor(Math.random() * 4)
                 console.log(randoms)
                 switch (randoms) {
@@ -221,11 +221,11 @@ window.onload=()=>{
                         break;
                 }
             continue;
-            }else if((state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
+            }else if(point==2&&(state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
                 makeMove(1, 1)
                 console.log('E')
                 break;
-            }else if(((state[1][0]=='X'&&state[2][1]=='X')||(state[1][2]=='X'&&state[2][1]=='X')||(state[1][0]=='X'&&state[0][1]=='X')||(state[1][2]=='X'&&state[0][1]=='X'))&&(state[2][0]==''&&state[2][2]==''&&state[0][0]==''&&state[0][2]=='')){
+            }else if((point==2&&(state[1][0]=='X'&&state[2][1]=='X')||(state[1][2]=='X'&&state[2][1]=='X')||(state[1][0]=='X'&&state[0][1]=='X')||(state[1][2]=='X'&&state[0][1]=='X'))&&(state[2][0]==''&&state[2][2]==''&&state[0][0]==''&&state[0][2]=='')){
                 console.log('YEE')
                 if(state[1][0]=='X'&&state[2][1]=='X'&&state[2][0]==''){
                     makeMove(2, 0)
@@ -242,7 +242,7 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
-            }else if((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'&&state[1][0]=='')){
+            }else if(point==2&&(state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'&&state[1][0]=='')){
                 console.log('HEE')
                 if ((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')) {
                     makeMove(1, 2)
