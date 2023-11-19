@@ -132,13 +132,13 @@ window.onload=()=>{
             //แนวนอน แนวตั้ง
             else if((state[i][0]=='O' && state[i][1]=='O' && state[i][2]=='') || (state[i][0]=='X' && state[i][1]=='X' && state[i][2]=='')){
                 makeMove(i, 2)
-                console.log('J')
+                console.log('V')
                 break;
             }else if((state[i][0]=='O' && state[i][2]=='O' && state[i][1]=='') || (state[i][0]=='X' && state[i][2]=='X' && state[i][1]=='')){
                 makeMove(i, 1)
                 console.log('K')
                 break;
-            }else if((state[i][2]=='O' && state[i][1]=='O' && state[i][0]=='') || (state[i][2]=='X' && state[i][1]=='X' && state[i][0]=='')){
+            }else if((state[i][1]=='O' && state[i][2]=='O' && state[i][0]=='') || (state[i][1]=='X' && state[i][2]=='X' && state[i][0]=='')){
                 makeMove(i, 0)
                 console.log('I')
                 break;
@@ -191,6 +191,17 @@ window.onload=()=>{
                     break;
                 }else if(state[1][2]=='X'&&state[0][1]=='X'&&state[0][2]==''){
                     makeMove(0, 2)
+                    break;
+                }else{
+                    continue;
+                }
+            }else if((point==2)&&((state[1][0]=='X'&&state[1][1]=='X')||(state[1][2]=='X'&&state[1][1]=='X')&&(state[0][1]==''||state[2][1]==''))){
+                console.log('H')
+                if (state[0][1]=='') {
+                    makeMove(0, 1)
+                    break;
+                }else if(state[2][1]==''){
+                    makeMove(2, 1)
                     break;
                 }else{
                     continue;
