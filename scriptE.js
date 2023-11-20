@@ -244,7 +244,7 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
-            }else if(Xpoint==2&&((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'))){
+            }else if(Xpoint==2&&((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'))&&(state[0][0]==''||state[0][2]==''||state[2][0]==''||state[2][2]=='')){
                 console.log('HEE')
                 if(state[0][0]==''){
                     makeMove(0, 0)
