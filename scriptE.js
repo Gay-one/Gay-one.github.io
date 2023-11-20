@@ -19,7 +19,6 @@ window.onload=()=>{
     const state = [['', '', ''], ['', '', ''], ['', '', '']];
     // เดิน
     function makeMove(row, col) {
-        point=0;
         if (gameActive && state[row][col] === '') {
             state[row][col] = currentPlayer;
             renderBoard(row, col);
@@ -92,7 +91,6 @@ window.onload=()=>{
     }
     // BOT เดิน
     function makeBotMove() {
-        let point = 0
         const emptyCells = [];
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
@@ -103,28 +101,30 @@ window.onload=()=>{
         }
         // ตรรกะ BOT
         if (emptyCells.length > 0) {
+            let Opoint = 0
+            let Xpoint = 0;
             for (let i = 0; i < 3; i++) {
-                if (point==2&&(state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
+                if (Opoint==2&&(state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
                     makeMove(2, 2)
                     console.log('N')
                     break;
-                }else if(point==2&&(state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
+                }else if(Opoint==2&&(state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('O')
                     break;
-                }else if(point==2&&(state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
+                }else if(Opoint==2&&(state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
                     makeMove(0, 0)
                     console.log('T')
                     break;
-                }else if(point==2&&(state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
+                }else if(Opoint==2&&(state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
                     makeMove(2, 0)
                     console.log('J')
                     break;
-                }else if(point==2&&(state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
+                }else if(Opoint==2&&(state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('M')
                     break;
-                }else if(point==2&&(state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
+                }else if(Opoint==2&&(state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
                     makeMove(0, 2)
                     console.log('L')
                     break;
@@ -152,29 +152,30 @@ window.onload=()=>{
                     makeMove(0, i)
                     console.log('B')
                     break;
-                }}
+                }
+            Opoint++}
                 for (let i = 0; i < 3; i++) {
-            if (point==2&&(state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
+            if (Xpoint==2&&(state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
                 makeMove(2, 2)
                 console.log('N')
                 break;
-            }else if(point==2&&(state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
+            }else if(Xpoint==2&&(state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('O')
                 break;
-            }else if(point==2&&(state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
+            }else if(Xpoint==2&&(state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
                 makeMove(0, 0)
                 console.log('T')
                 break;
-            }else if(point==2&&(state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
+            }else if(Xpoint==2&&(state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
                 makeMove(2, 0)
                 console.log('J')
                 break;
-            }else if(point==2&&(state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
+            }else if(Xpoint==2&&(state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('M')
                 break;
-            }else if(point==2&&(state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
+            }else if(Xpoint==2&&(state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
                 makeMove(0, 2)
                 console.log('L')
                 break;
@@ -202,7 +203,7 @@ window.onload=()=>{
                 makeMove(0, i)
                 console.log('B')
                 break;
-            }else if(point==2&&state[1][1]=='X' && (state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[1][0]=='' &&state[1][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
+            }else if(Xpoint==2&&state[1][1]=='X' && (state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[1][0]=='' &&state[1][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
                 let randoms = Math.floor(Math.random() * 4)
                 console.log(randoms)
                 switch (randoms) {
@@ -222,11 +223,11 @@ window.onload=()=>{
                         break;
                 }
             continue;
-            }else if(point==2&&(state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
+            }else if(Xpoint==2&&(state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
                 makeMove(1, 1)
                 console.log('E')
                 break;
-            }else if((point==2&&(state[1][0]=='X'&&state[2][1]=='X')||(state[1][2]=='X'&&state[2][1]=='X')||(state[1][0]=='X'&&state[0][1]=='X')||(state[1][2]=='X'&&state[0][1]=='X'))&&(state[2][0]==''&&state[2][2]==''&&state[0][0]==''&&state[0][2]=='')){
+            }else if((Xpoint==2&&(state[1][0]=='X'&&state[2][1]=='X')||(state[1][2]=='X'&&state[2][1]=='X')||(state[1][0]=='X'&&state[0][1]=='X')||(state[1][2]=='X'&&state[0][1]=='X'))&&(state[2][0]==''&&state[2][2]==''&&state[0][0]==''&&state[0][2]=='')){
                 console.log('YEE')
                 if(state[1][0]=='X'&&state[2][1]=='X'&&state[2][0]==''){
                     makeMove(2, 0)
@@ -243,26 +244,33 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
-            }else if(point==2&&(state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'&&state[1][0]=='')){
+            }else if(Xpoint==2&&((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'))){
                 console.log('HEE')
-                if ((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X'&&state[1][2]=='')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X'&&state[1][2]=='')) {
-                    makeMove(1, 2)
+                if(state[0][0]==''){
+                    makeMove(0, 0)
                     break;
-                }else if ((state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X'&&state[1][0]=='')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'&&state[1][0]=='')) {
-                    makeMove(1, 0)
+                }else if (state[0][2]=='') {
+                    makeMove(0, 2)
+                    break;
+                }else if (state[2][0]=='') {
+                    makeMove(2, 0)
+                    break;
+                }else if (state[2][2]=='') {
+                    makeMove(2, 2)
                     break;
                 }else{
                     continue;
                 }
             }
-            else if (point==2){
+            else if (Xpoint==2){
             const randomIndex = Math.floor(Math.random() * emptyCells.length);
             const { row, col } = emptyCells[randomIndex];
             makeMove(row, col)
             console.log('A')
             break;
             }
-            point++
+            Xpoint++
+            console.log(Xpoint)
         }
         }
     }
