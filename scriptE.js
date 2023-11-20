@@ -261,6 +261,23 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
+            }else if(Xpoint==2&&((state[1][0]=='X'&&state[0][2]=='X'&&state[0][0]=='')||(state[1][0]=='X'&&state[2][2]=='X'&&state[2][0]=='')||(state[1][2]=='X'&&state[0][0]=='X'&&state[0][2]=='')||(state[1][2]=='X'&&state[2][0]=='X'&&state[2][2]==''))){
+                console.log('YAI')
+                if(state[1][0]=='X'&&state[0][2]=='X'&&state[0][0]==''){
+                    makeMove(0, 0)
+                    break;
+                }else if(state[1][0]=='X'&&state[2][2]=='X'&&state[2][0]==''){
+                    makeMove(2, 0)
+                    break;
+                }else if(state[1][2]=='X'&&state[0][0]=='X'&&state[0][2]==''){
+                    makeMove(0, 2)
+                    break;
+                }else if(state[1][2]=='X'&&state[2][0]=='X'&&state[2][2]==''){
+                    makeMove(2, 2)
+                    break;
+                }else{
+                    continue;
+                }
             }
             else if (Xpoint==2){
             const randomIndex = Math.floor(Math.random() * emptyCells.length);
