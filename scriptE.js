@@ -1,11 +1,16 @@
 window.onload=()=>{
     var board = document.getElementById('board');
     var message = document.querySelector('.result');
-    var currentPlayer = 'X';
+    document.getElementById('send_level').addEventListener('click', () => set_bot_level());
     var gameActive = true;
     var coin = 0
     var O_s = 0
     var X_s = 0
+    console.log(level);
+    set_bot_level=()=>{
+        let level = document.getElementById('Bot-level').value;
+        return level;
+    }
     // สร้างบอร์ด และสร้างค่ารับ event
     for (let i = 0; i < 3; i++) {
         const row = board.insertRow(i);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เดี่ยวกูยิงมึงแบบ Tic Tac Toe เลยไอ้สัส</title>
+    <title>ยิงแบบ Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
     <script src="scriptE.js"></script>
 </head>
@@ -11,6 +11,15 @@
 <div class="score">
     <span id="X">Player Score 0</span>
     <span id="O">BOT Score 0</span>
+</div>
+<div class="style-level">
+    <label for="level-tag">Level Choose: </label>
+    <select name="level" id="Bot-level">
+        <option value="Hard">Hard</option>
+        <option value="Dumb_Bot">Dumb-Bot</option>
+        <option value="Retard_People_Choose_This">Retard People Choose This</option>
+    </select>
+    <input type="button" value="Send" id="send_level">
 </div>
 <table id="board"></table>
 <div class="result"></div>

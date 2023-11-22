@@ -34,6 +34,7 @@ form {
     left: 60%;
 }
 input {
+    margin-left: 15px;
     background-color: crimson;
     color: aliceblue;
     font-size: 20px;
@@ -54,4 +55,9 @@ input:hover{
     display: grid;
     grid-template-columns: repeat(2,50%);
     text-align: center;
+}
+.style-level{
+    text-align: center;
+    color: gray;
+    font-size: 20px;
 }
