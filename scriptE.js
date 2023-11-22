@@ -1,14 +1,16 @@
 window.onload=()=>{
     var board = document.getElementById('board');
     var message = document.querySelector('.result');
+    var currentPlayer = 'X';
     document.getElementById('send_level').addEventListener('click', () => set_bot_level());
     var gameActive = true;
     var coin = 0
     var O_s = 0
     var X_s = 0
-    console.log(level);
+    var level = 'Hard';
     set_bot_level=()=>{
-        let level = document.getElementById('Bot-level').value;
+        level = document.getElementById('Bot-level').value;
+        alert(`Your just choose LEVEL ${level}`)
         return level;
     }
     // สร้างบอร์ด และสร้างค่ารับ event
@@ -109,106 +111,106 @@ window.onload=()=>{
             let Opoint = 0
             let Xpoint = 0;
             for (let i = 0; i < 3; i++) {
-                if (Opoint==2&&(state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
+                if (Opoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][0]=='O' && state[1][1]=='O' && state[2][2]=='')) {
                     makeMove(2, 2)
                     console.log('N')
                     break;
-                }else if(Opoint==2&&(state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
+                }else if(Opoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][0]=='O' && state[2][2]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('O')
                     break;
-                }else if(Opoint==2&&(state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
+                }else if(Opoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[1][1]=='O' && state[2][2]=='O' && state[0][0]=='')){
                     makeMove(0, 0)
                     console.log('T')
                     break;
-                }else if(Opoint==2&&(state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
+                }else if(Opoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][2]=='O' && state[1][1]=='O' && state[2][0]=='')){
                     makeMove(2, 0)
                     console.log('J')
                     break;
-                }else if(Opoint==2&&(state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
+                }else if(Opoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][2]=='O' && state[2][0]=='O' && state[1][1]=='')){
                     makeMove(1, 1)
                     console.log('M')
                     break;
-                }else if(Opoint==2&&(state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
+                }else if(Opoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[2][0]=='O' && state[1][1]=='O' && state[0][2]=='')){
                     makeMove(0, 2)
                     console.log('L')
                     break;
-                }else if((state[i][0]=='O' && state[i][1]=='O' && state[i][2]=='')){
+                }else if((level=='Hard'||level=='Dumb Bot')&&(state[i][0]=='O' && state[i][1]=='O' && state[i][2]=='')){
                     makeMove(i, 2)
                     console.log('V')
                     break;
-                }else if((state[i][0]=='O' && state[i][2]=='O' && state[i][1]=='') ){
+                }else if((level=='Hard'||level=='Dumb Bot')&&(state[i][0]=='O' && state[i][2]=='O' && state[i][1]=='') ){
                     makeMove(i, 1)
                     console.log('K')
                     break;
-                }else if((state[i][1]=='O' && state[i][2]=='O' && state[i][0]=='')){
+                }else if((level=='Hard'||level=='Dumb Bot')&&(state[i][1]=='O' && state[i][2]=='O' && state[i][0]=='')){
                     makeMove(i, 0)
                     console.log('I')
                     break;
-                }else if((state[0][i]=='O' && state[1][i]=='O' && state[2][i]=='')){
+                }else if((level=='Hard'||level=='Dumb Bot')&&(state[0][i]=='O' && state[1][i]=='O' && state[2][i]=='')){
                     makeMove(2, i)
                     console.log('G')
                     break;
-                }else if((state[0][i]=='O' && state[2][i]=='O' && state[1][i]=='')){
+                }else if((level=='Hard'||level=='Dumb Bot')&&(state[0][i]=='O' && state[2][i]=='O' && state[1][i]=='')){
                     makeMove(1, i)
                     console.log('C')
                     break;
-                }else if((state[2][i]=='O' && state[1][i]=='O' && state[0][i]=='')){
+                }else if((level=='Hard'||level=='Dumb Bot')&&(state[2][i]=='O' && state[1][i]=='O' && state[0][i]=='')){
                     makeMove(0, i)
                     console.log('B')
                     break;
                 }
             Opoint++}
                 for (let i = 0; i < 3; i++) {
-            if (Xpoint==2&&(state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
+            if (Xpoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][0]=='X' && state[1][1]=='X' && state[2][2]=='')){
                 makeMove(2, 2)
                 console.log('N')
                 break;
-            }else if(Xpoint==2&&(state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
+            }else if(Xpoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][0]=='X' && state[2][2]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('O')
                 break;
-            }else if(Xpoint==2&&(state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
+            }else if(Xpoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[1][1]=='X' && state[2][2]=='X' && state[0][0]=='')){
                 makeMove(0, 0)
                 console.log('T')
                 break;
-            }else if(Xpoint==2&&(state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
+            }else if(Xpoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][2]=='X' && state[1][1]=='X' && state[2][0]=='')){
                 makeMove(2, 0)
                 console.log('J')
                 break;
-            }else if(Xpoint==2&&(state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
+            }else if(Xpoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[0][2]=='X' && state[2][0]=='X' && state[1][1]=='')){
                 makeMove(1, 1)
                 console.log('M')
                 break;
-            }else if(Xpoint==2&&(state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
+            }else if(Xpoint==2&&(level=='Hard'||level=='Dumb Bot')&&(state[2][0]=='X' && state[1][1]=='X' && state[0][2]=='')){
                 makeMove(0, 2)
                 console.log('L')
                 break;
-            }else if((state[i][0]=='X' && state[i][1]=='X' && state[i][2]=='')){
+            }else if((level=='Hard'||level=='Dumb Bot')&&(state[i][0]=='X' && state[i][1]=='X' && state[i][2]=='')){
                 makeMove(i, 2)
                 console.log('V')
                 break;
-            }else if((state[i][0]=='X' && state[i][2]=='X' && state[i][1]=='')){
+            }else if((level=='Hard'||level=='Dumb Bot')&&(state[i][0]=='X' && state[i][2]=='X' && state[i][1]=='')){
                 makeMove(i, 1)
                 console.log('K')
                 break;
-            }else if((state[i][1]=='X' && state[i][2]=='X' && state[i][0]=='')){
+            }else if((level=='Hard'||level=='Dumb Bot')&&(state[i][1]=='X' && state[i][2]=='X' && state[i][0]=='')){
                 makeMove(i, 0)
                 console.log('I')
                 break;
-            }else if((state[0][i]=='X' && state[1][i]=='X' && state[2][i]=='')){
+            }else if((level=='Hard'||level=='Dumb Bot')&&(state[0][i]=='X' && state[1][i]=='X' && state[2][i]=='')){
                 makeMove(2, i)
                 console.log('G')
                 break;
-            }else if((state[0][i]=='X' && state[2][i]=='X' && state[1][i]=='')){
+            }else if((level=='Hard'||level=='Dumb Bot')&&(state[0][i]=='X' && state[2][i]=='X' && state[1][i]=='')){
                 makeMove(1, i)
                 console.log('C')
                 break;
-            }else if((state[2][i]=='X' && state[1][i]=='X' && state[0][i]=='')){
+            }else if((level=='Hard'||level=='Dumb Bot')&&(state[2][i]=='X' && state[1][i]=='X' && state[0][i]=='')){
                 makeMove(0, i)
                 console.log('B')
                 break;
-            }else if(Xpoint==2&&state[1][1]=='X' && (state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[1][0]=='' &&state[1][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
+            }else if(Xpoint==2&&state[1][1]=='X' && level=='Hard' &&(state[0][0]=='' &&state[0][1]=='' &&state[0][2]=='' &&state[1][0]=='' &&state[1][2]=='' &&state[2][0]=='' &&state[2][1]=='' &&state[2][2]=='')){
                 let randoms = Math.floor(Math.random() * 4)
                 console.log(randoms)
                 switch (randoms) {
@@ -228,11 +230,11 @@ window.onload=()=>{
                         break;
                 }
             continue;
-            }else if(Xpoint==2&&(state[1][1]=='' && (state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
+            }else if(Xpoint==2&&(state[1][1]=='' && level=='Hard' &&(state[1][0]=='X'||state[1][2]=='X'||state[0][0]=='X' ||state[0][1]=='X' ||state[0][2]=='X' ||state[2][0]=='X' ||state[2][1]=='X' ||state[2][2]=='X'))){
                 makeMove(1, 1)
                 console.log('E')
                 break;
-            }else if((Xpoint==2&&(state[1][0]=='X'&&state[2][1]=='X')||(state[1][2]=='X'&&state[2][1]=='X')||(state[1][0]=='X'&&state[0][1]=='X')||(state[1][2]=='X'&&state[0][1]=='X'))&&(state[2][0]==''&&state[2][2]==''&&state[0][0]==''&&state[0][2]=='')){
+            }else if((Xpoint==2&&level=='Hard' &&(state[1][0]=='X'&&state[2][1]=='X')||(state[1][2]=='X'&&state[2][1]=='X')||(state[1][0]=='X'&&state[0][1]=='X')||(state[1][2]=='X'&&state[0][1]=='X'))&&(state[2][0]==''&&state[2][2]==''&&state[0][0]==''&&state[0][2]=='')){
                 console.log('YEE')
                 if(state[1][0]=='X'&&state[2][1]=='X'&&state[2][0]==''){
                     makeMove(2, 0)
@@ -249,7 +251,7 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
-            }else if(Xpoint==2&&((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'))&&(state[0][0]==''||state[0][2]==''||state[2][0]==''||state[2][2]=='')){
+            }else if(Xpoint==2&&level=='Hard' &&((state[0][0]=='O'&&state[1][1]=='X'&&state[2][2]=='X')||(state[0][2]=='O'&&state[1][1]=='X'&&state[2][0]=='X')||(state[2][0]=='O'&&state[1][1]=='X'&&state[0][2]=='X')||(state[2][2]=='O'&&state[1][1]=='X'&&state[0][0]=='X'))&&(state[0][0]==''||state[0][2]==''||state[2][0]==''||state[2][2]=='')){
                 console.log('HEE')
                 if(state[0][0]==''){
                     makeMove(0, 0)
@@ -266,7 +268,7 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
-            }else if(Xpoint==2&&((state[1][0]=='X'&&state[0][2]=='X'&&state[0][0]=='')||(state[1][0]=='X'&&state[2][2]=='X'&&state[2][0]=='')||(state[1][2]=='X'&&state[0][0]=='X'&&state[0][2]=='')||(state[1][2]=='X'&&state[2][0]=='X'&&state[2][2]==''))){
+            }else if(Xpoint==2&&level=='Hard' &&((state[1][0]=='X'&&state[0][2]=='X'&&state[0][0]=='')||(state[1][0]=='X'&&state[2][2]=='X'&&state[2][0]=='')||(state[1][2]=='X'&&state[0][0]=='X'&&state[0][2]=='')||(state[1][2]=='X'&&state[2][0]=='X'&&state[2][2]==''))){
                 console.log('YAI')
                 if(state[1][0]=='X'&&state[0][2]=='X'&&state[0][0]==''){
                     makeMove(0, 0)

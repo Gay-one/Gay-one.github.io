@@ -34,7 +34,7 @@ form {
     left: 60%;
 }
 input {
-    margin-left: 15px;
+    margin: 20px;
     background-color: crimson;
     color: aliceblue;
     font-size: 20px;
