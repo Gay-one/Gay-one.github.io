@@ -9,19 +9,20 @@ window.onload=()=>{
     var X_s = 0
     var level = 'Hard';
     set_bot_level=()=>{
-        level = document.getElementById('Bot-level').value;
-        alert(`Your just choose LEVEL ${level}`)
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-              state[i][j] = '';
-              board.rows[i].cells[j].textContent = '';
-            }
-          }
+        newlevel = document.getElementById('Bot-level').value;
+        if(newlevel!==level){
+        alert(`You just choose LEVEL ${newlevel}`)
+        alert(`Your score was reset`)
           O_s = 0
           X_s = 0
-          document.getElementById("O").innerHTML = `BOT Score ${O_s}`
-          document.getElementById("X").innerHTML = `Player Score ${X_s}`
+          document.getElementById("O").innerHTML = `O Score ${O_s}`
+          document.getElementById("X").innerHTML = `X Score ${X_s}`
+          level=newlevel;
         return level;
+    }else{
+        alert(`You just choose LEVEL ${level}`)
+        return false
+    }
     }
     // สร้างบอร์ด และสร้างค่ารับ event
     for (let i = 0; i < 3; i++) {
@@ -47,13 +48,13 @@ window.onload=()=>{
                     O_s++
                     setTimeout(() => {
                     alert('โห่ ไอ้ควายแพ้ BOT')
-                    document.getElementById("O").innerHTML = `BOT Score ${O_s}`
+                    document.getElementById("O").innerHTML = `O Score ${O_s}`
                 }, 500);}
                 if(currentPlayer=='X'){
                     X_s++
                     setTimeout(() => {
                     alert('Good Good Not Bad')
-                    document.getElementById("X").innerHTML = `Player Score ${X_s}`
+                    document.getElementById("X").innerHTML = `X Score ${X_s}`
                 }, 500);}
             } else if (isBoardFull()) {
                 message.textContent = "It's a tie!";
@@ -295,6 +296,26 @@ window.onload=()=>{
                 }else{
                     continue;
                 }
+            }else if(Xpoint==2&&level=='Hard'&&state[1][1]=='O'&&((state[0][0]=='X'&&state[2][2]=='X')||(state[0][2]=='X'&&state[2][0]=='X'))){
+                let randoms = Math.floor(Math.random() * 4)
+                console.log("OP")
+                switch (randoms) {
+                    case 0:
+                        makeMove(0, 1)
+                        break;
+                    case 1:
+                        makeMove(1, 0)
+                        break;
+                    case 2:
+                        makeMove(1, 2)
+                        break;
+                    case 3:
+                        makeMove(2, 1)
+                        break;
+                    default:
+                        break;
+                }
+            continue;
             }
             else if (Xpoint==2){
             const randomIndex = Math.floor(Math.random() * emptyCells.length);
@@ -310,8 +331,8 @@ window.onload=()=>{
     }
     // button-restart
     restart=()=>{
-                let div = document.createElement('form');
-                let continue_div = document.createElement('input');
+                var div = document.createElement('form');
+                var continue_div = document.createElement('input');
                 continue_div.setAttribute("type", "button");
                 continue_div.value='Restart'
                 div.appendChild(continue_div);
