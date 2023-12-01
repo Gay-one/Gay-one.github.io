@@ -11,7 +11,16 @@ window.onload=()=>{
     set_bot_level=()=>{
         level = document.getElementById('Bot-level').value;
         alert(`Your just choose LEVEL ${level}`)
-        restart()
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+              state[i][j] = '';
+              board.rows[i].cells[j].textContent = '';
+            }
+          }
+          O_s = 0
+          X_s = 0
+          document.getElementById("O").innerHTML = `BOT Score ${O_s}`
+          document.getElementById("X").innerHTML = `Player Score ${X_s}`
         return level;
     }
     // สร้างบอร์ด และสร้างค่ารับ event
