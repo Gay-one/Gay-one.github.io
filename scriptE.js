@@ -11,6 +11,7 @@ window.onload=()=>{
     set_bot_level=()=>{
         level = document.getElementById('Bot-level').value;
         alert(`Your just choose LEVEL ${level}`)
+        restart()
         return level;
     }
     // สร้างบอร์ด และสร้างค่ารับ event
