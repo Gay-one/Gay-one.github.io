@@ -18,8 +18,12 @@ window.onload=()=>{
           document.getElementById("O").innerHTML = `O Score ${O_s}`
           document.getElementById("X").innerHTML = `X Score ${X_s}`
           if(gameActive){
-            gameActive = false
-            restart()
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                  state[i][j] = '';
+                  board.rows[i].cells[j].textContent = '';
+                }
+              }
           }
           level=newlevel;
         return level;
