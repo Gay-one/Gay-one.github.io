@@ -2,14 +2,14 @@ window.onload=()=>{
     var board = document.getElementById('board');
     var message = document.querySelector('.result');
     var currentPlayer = 'X';
-    document.getElementById('send_level').addEventListener('click', () => set_bot_level());
     var gameActive = true;
     var coin = 0
     var O_s = 0
     var X_s = 0
     var level = 'Hard';
+    document.getElementById('send_level').addEventListener('click', () => set_bot_level());
     set_bot_level=()=>{
-        newlevel = document.getElementById('Bot-level').value;
+        let newlevel = document.getElementById('Bot-level').value;
         if(newlevel!==level){
         alert(`You just choose LEVEL ${newlevel}`)
         alert(`Your score was reset`)
@@ -17,6 +17,10 @@ window.onload=()=>{
           X_s = 0
           document.getElementById("O").innerHTML = `O Score ${O_s}`
           document.getElementById("X").innerHTML = `X Score ${X_s}`
+          if(gameActive){
+            gameActive = false
+            restart()
+          }
           level=newlevel;
         return level;
     }else{
