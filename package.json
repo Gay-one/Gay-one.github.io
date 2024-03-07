@@ -1,0 +1,19 @@
+{
+  "name": "yaimak",
+  "version": "13.14.0",
+  "description": "main",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startv": "nodemon index.js"
+  },
+  "author": "heehe",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "git": "^0.1.5",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.2"
+  }
+}
