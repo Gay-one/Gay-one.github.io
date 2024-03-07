@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE-WEB</title>
+    <%- include("template/style-head.ejs")%>
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/login_search.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+    <%- include("template/head.ejs")%>
+    <div class="boxYai" id="BOX">
+        <div class="boxin" id="Target">
+            <h1>SIMPLE-WEB</h1>
+            <div>
+                <p>SIMPLE-WEB เว็บไซต์เครื่องเล่นเพลงที่ออกแบบมาเพื่อมอบประสบการณ์การฟังเพลงที่เรียบง่าย</p>
+                <p><b>ฟีเจอร์</b></p>
+                <p>อินเทอร์เฟซผู้ใช้ที่เรียบง่าย สวยงาม ใช้งานง่าย</p>
+                <p>รองรับการเล่นเพลงแบบสุ่ม เล่นซ้ำ และวนลูป</p>
+            </div>
+        </div>
+        <div class="boxMaiyai">
+            <div class="Oyai">
+                <div><center><img src="" alt="" class="music-img" id="img-song"></center></div>
+                <div id="img-div">
+                    <span class="other">
+                        <div class="text" id="name">music_name</div>
+                        <div class="text" id="band">music_band</div>
+                        <div class="text" id="release">music_release</div>
+                    </span>
+                    <span>
+                        <img src="img/pngegg (1).png" id="skip-1" alt="">
+                        <img src="img/pngegg (1).png" id="skip-2" alt="">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/script/music.js"></script>
+</body>
+</html>
